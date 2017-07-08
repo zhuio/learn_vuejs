@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>vue js tutorial</title>
+</head>
+<body>
+	<div id="myapp">
+		<p>新一代的主机价格是{{price}}美金，人民币是{{priceRMB}}元</p>
+		<button @click="callback">加价</button>
+	</div>
+	<script>
+		var vm = new Vue({
+		
+			el: "#myapp",
+			data:{
+				price:0,
+				priceRMB:0,
+			},
+
+			watch:{
+				price:function (newval,oldval) {
+					alert(newval,oldval)
+					this.priceRMB = Math.round(this.price*6.8)
+				}
+			},
+			methods:{
+				callback:function () {
+					this.price += 100
+				}
+			},
+
+		
+		})
+		vm.price = 199;
+	</script>
+</body>
+</html>

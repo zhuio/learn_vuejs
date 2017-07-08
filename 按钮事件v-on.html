@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue@2.3.4"></script>
+	<title>vue js tutorial</title>
+</head>
+<body>
+	<div id="myapp">
+	    <p>拥有的游戏中最爱玩的是:{{game}}</p>
+		<button v-on:click="btnClick('GTA5')">GTA5</button>
+		<button v-on:click="btnClick('CS-GO')">CS-GO</button>
+		<button v-on:click="btnClick('LITTLE NIGHTMIRE')">LITTLE NIGHTMIRE</button>
+		<button v-on:click="btnClick('MINECRAFT')">MINECRAFT</button>
+	</div>
+	<script>
+		var vm = new Vue({
+		
+			el: "#myapp",
+			data: {
+				game:'LOL',
+			},
+			methods: {
+				btnClick: function (name) {
+					this.game = name;
+				}
+			},
+		
+		})
+
+	</script>
+</body>
+</html>

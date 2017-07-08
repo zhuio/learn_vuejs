@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>vue js tutorial</title>
+</head>
+<body>
+	<div id="myapp">
+		<h3>游戏列表</h3>
+		<ul>
+			<game-items v-for="item in items" :game="item"></game-items >
+		</ul>
+
+	</div>
+	<script>
+		Vue.component(
+			'game-items', {
+				props: ['game'],
+				template: '<li>{{game.title}}/{{game.price}}</li>'
+			})
+		var vm = new Vue({
+		
+			el: "#myapp",
+			data:{
+				items:[
+					{title:'GTA5',price:149},
+					{title:'CS-GO',price:59},
+					{title:'铁拳7',price:599},
+					],
+			},
+		
+		})
+	</script>
+</body>
+</html>

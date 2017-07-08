@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>vue js tutorial</title>
+</head>
+<body>
+	<div id="myApp">
+		<p>你最喜欢的游戏是{{mygame}}</p>
+		<input type="text" v-model='mygame'>
+	</div>
+	<script>
+		var vm = new Vue({
+		
+			el: "#myApp",
+			data: {
+				mygame: 'GTA5'
+			},
+		
+		})
+	</script>
+</body>
+</html>

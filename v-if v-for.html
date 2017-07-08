@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>vue js tutorial</title>
+</head>
+<body>
+	<div id="myApp">
+		<h3>我的游戏列表</h3>
+		<p v-if="seen">2017想要购买的游戏列表</p>
+		<ul>
+			<li v-for="game in games">{{game.title}}/{{game.price}}元</li>
+		</ul>
+		</div>
+		<script>
+			var vm = new Vue({
+
+				el: "#myApp",
+				data:{
+					seen: true,
+					games:[
+					{title:'GTA5',price:149},
+					{title:'CS-GO',price:59},
+					{title:'铁拳7',price:599},
+					],
+				},
+			})
+		</script>
+	</body>
+	</html>

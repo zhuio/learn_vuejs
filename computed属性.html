@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>vue js tutorial</title>
+</head>
+<body>
+	<div id="myapp">
+		<p>新一代的主机价格是{{price}}美金，人民币是{{change}}元</p>
+	</div>
+	<script>
+		var vm = new Vue({
+		
+			el: "#myapp",
+			data:{
+				price:199,
+			},
+			computed:{
+				change:function () {
+					return this.price*6.8039
+				}
+			},
+
+		
+		})
+	</script>
+</body>
+</html>
